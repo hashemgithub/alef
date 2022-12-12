@@ -1,0 +1,6 @@
+replicaCount: 1
+image: 
+  repository: postgres:11-alpine
+  tag: 233c97d9
+port: 8080
+name: hashem-db

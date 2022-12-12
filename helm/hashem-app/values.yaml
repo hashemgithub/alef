@@ -1,0 +1,6 @@
+replicaCount: 1
+image: 
+  repository: hashem/alef-test:latest
+  tag: 233c97d9
+port: 8080
+name: hashem-app

@@ -1,0 +1,9 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: hashem-app-configmap
+  namespace: test
+data:
+    DB_HOST: "hashem-db"
+    DB_NAME: "hashem_db"
+    DB_PORT: "5432"

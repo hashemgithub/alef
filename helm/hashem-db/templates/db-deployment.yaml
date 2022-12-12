@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hashem-db
+  namespace: test
+spec:
+  selector:
+   matchLabels:
+    app: hashem-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hashem-db
+    spec:
+      containers:
+        - name: hashem-db
+          image: postgres:11-alpine
+          imagePullPolicy: "IfNotPresent"
+          envFrom:
+            - configMapRef:
+                name: hashem-db-configmap
+            - secretRef:
+                name: hashem-db-secret
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: hashem-db
+      volumes:
+        - name: hashem-db
+          persistentVolumeClaim:
+            claimName: postgres-pv-claim
