@@ -6,13 +6,11 @@ import os
 app = Flask(__name__)
 app.debug = True
 
-@app.route('/')
-def index():
-    return 'Hello Team, This is Hashem App test!'
+
 @app.route("/healthz")
 def index():
     try:
-        psycopg2.connect(os.environ.get("DB_URL"))
+        psycopg2.connect(dbname=os.environ.get("DB_NAME"), user=os.environ.get("DB_USER"), password=os.environ.get("DB_PASS"), host=os.environ.get("DB_HOST"), port=os.environ.get("DB_PORT") )
         return "Well done"
     except:
         return "Maintenance"
