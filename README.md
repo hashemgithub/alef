@@ -17,10 +17,10 @@
 ### will do	docker-compose down
 
 `build:`
-### will do	docker build -t $(LOCAL_TAG) .
+### will do	docker build 
 
 `push:`
-### will do	docker tag $(LOCAL_TAG) $(REMOTE_TAG) & docker push $(REMOTE_TAG)
+### will do	docker tag & docker push 
 
 `deploy-db:`
 ### will do	helm upgrade and rollout the deployment
