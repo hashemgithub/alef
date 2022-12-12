@@ -108,3 +108,4 @@ venv.bak/
 
 /terraform-azure/.terraform
 TERRAFORM_AZURE/.terraform
+.DS_Store
