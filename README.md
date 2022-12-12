@@ -8,3 +8,24 @@
 ### docker image name
 `hashem/alef-test:latest`
 ### the makefile it has some commands to make the deployment easier
+
+`run-local:`
+
+### will do	docker-compose up 
+
+`stop-local:`
+### will do	docker-compose down
+
+`build:`
+### will do	docker build -t $(LOCAL_TAG) .
+
+`push:`
+### will do	docker tag $(LOCAL_TAG) $(REMOTE_TAG) & docker push $(REMOTE_TAG)
+
+`deploy-db:`
+### will do	helm upgrade and rollout the deployment
+
+
+
+`deploy-app:`
+### will do	helm upgrade and rollout the deployment
